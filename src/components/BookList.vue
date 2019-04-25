@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>{{title}}</h1>
+    <ul>
+      <book-item v-for='(book, index) in books' :key='index' :book='book'></book-item>
+    </ul>
     <hr><h2>Filtered Books By Ownership</h2>
     <select v-model="holding">
       <option v-for="(filter, index) in filters" :key="index">{{ filter }}</option>
